@@ -21,12 +21,12 @@ public class Produto {
 	@Column(length = 100, nullable=false)
 	private String nome;
 
-    @Column(precision=10, scale=2, nullable=false)
-    private Float preco;
+	@Column(precision=10, scale=2, nullable=false)
+	private Float preco;
 
-    @ManyToOne
-    @JoinColumn(name = "codigo_categoria", nullable=false)
-    private Categoria categoria;
+	@ManyToOne
+	@JoinColumn(name = "codigo_categoria", nullable=false)
+	private Categoria categoria;
 
 	public Integer getCodigo() {
 		return codigo;
@@ -44,7 +44,7 @@ public class Produto {
 		this.nome = nome;
 	}
 
-    public Float getPreco() {
+	public Float getPreco() {
 		return preco;
 	}
 
@@ -52,7 +52,7 @@ public class Produto {
 		this.preco = preco;
 	}
 
-    public Categoria getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
