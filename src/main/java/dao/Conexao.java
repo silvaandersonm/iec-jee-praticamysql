@@ -7,8 +7,8 @@ public class Conexao {
 	
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private String URL	=  "jdbc:mysql://localhost:3306/IEC_CRUD?useTimezone=true&serverTimezone=UTC";
-	private String USER = "root";
-	private String SENHA = "root";
+	private String USER = "user_iec_crud";
+	private String SENHA = "user_iec_crud";
 	private Connection conn;
 	
 	public Conexao() {

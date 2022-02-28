@@ -10,22 +10,28 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "categoria")
 public class Categoria {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int codigo;
-	@Column(length = 100)
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer codigo;
+
+	@Column(length=100, nullable=false)
 	private String nome;
-	
-	public int getCodigo() {
+
+	public Integer getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
-	}		
+	}
+
 }

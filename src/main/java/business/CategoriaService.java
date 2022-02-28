@@ -14,6 +14,7 @@ import repository.RepositorySession;
 
 @Stateless
 public class CategoriaService {
+
     @EJB
     private RepositorySession repository;
     private CategoriaRepository categoriaRepository;
@@ -24,16 +25,8 @@ public class CategoriaService {
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserir(Categoria timesheet) {
-        categoriaRepository.inserir(timesheet);
-    }
-
-    public List<Categoria> listar() {
-        return categoriaRepository.listar();
-    }
-
-    public Categoria porCodigo(Integer codigo) throws Exception {
-        return categoriaRepository.porCodigo(codigo);
+    public void inserir(Categoria categoria) {
+        categoriaRepository.inserir(categoria);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
@@ -42,8 +35,16 @@ public class CategoriaService {
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletar(Integer codigo) throws Exception {
-        categoriaRepository.deletar(codigo);
-    } 
+    public void excluir(Integer codigo) throws Exception {
+        categoriaRepository.excluir(codigo);
+    }
+
+    public Categoria obterPorCodigo(Integer codigo) throws Exception {
+        return categoriaRepository.obterPorCodigo(codigo);
+    }
+
+    public List<Categoria> listar() {
+        return categoriaRepository.listar();
+    }
 
 }

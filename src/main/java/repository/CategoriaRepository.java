@@ -5,12 +5,15 @@ import java.util.List;
 import model.Categoria;
 
 public interface CategoriaRepository {
-    void inserir(Categoria categoria);
-    List<Categoria> listar();
 
-    Categoria porCodigo(Integer id) throws Exception;
+    void inserir(Categoria categoria);
 
     void editar(Categoria categoria) throws Exception;
 
-    void deletar(Integer codigo) throws Exception;
+    void excluir(Integer codigo) throws Exception;
+
+    Categoria obterPorCodigo(Integer codigo) throws Exception;
+
+    List<Categoria> listar();
+
 }

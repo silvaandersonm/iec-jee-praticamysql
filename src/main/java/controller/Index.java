@@ -15,10 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import business.CategoriaService;
 import model.Categoria;
 
-@WebServlet("/index.jsp")
+@WebServlet("/")
 public class Index extends HttpServlet{
+
 	@EJB
     private CategoriaService service;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
@@ -27,6 +29,7 @@ public class Index extends HttpServlet{
 			throw new ServletException(ex);
 		}
 	}
+
     private void listaCategoria(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Categoria> listaCategoria = service.listar();
@@ -34,4 +37,5 @@ public class Index extends HttpServlet{
 		RequestDispatcher dispatcher = request.getRequestDispatcher("inicial.jsp");
 		dispatcher.forward(request, response);
 	}
+
 }
